@@ -8,12 +8,19 @@
     "dueDate": "2024-04-01",
     "reminder": false
   },
+
+ 
+  
+ 
+
+ 
+ 
   {
     "id": "inv-002",
     "invoiceNumber": "INV-002",
     "customer": "Client B",
     "amount": 2300,
-    "status": "Unpaid",
+    "status": "Overdue",
     "dueDate": "2024-05-10",
     "reminder": true
   },
@@ -22,7 +29,7 @@
     "invoiceNumber": "INV-002",
     "customer": "Client B",
     "amount": 2300,
-    "status": "Unpaid",
+    "status": "Awaited",
     "dueDate": "2024-05-10",
     "reminder": true
   },
@@ -31,7 +38,7 @@
     "invoiceNumber": "INV-003",
     "customer": "Client 3",
     "amount": 2300,
-    "status": "Unpaid",
+    "status": "Partially Paid",
     "dueDate": "2024-05-10",
     "reminder": true
   },
@@ -40,7 +47,7 @@
     "invoiceNumber": "INV-004",
     "customer": "Client 4",
     "amount": 2300,
-    "status": "Unpaid",
+    "status": "Disputed",
     "dueDate": "2024-05-10",
     "reminder": true
   },
@@ -50,6 +57,15 @@
     "customer": "Client 5",
     "amount": 2300,
     "status": "Unpaid",
+    "dueDate": "2024-05-10",
+    "reminder": true
+  } , 
+    {
+    "id": "inv-006",
+    "invoiceNumber": "INV-005",
+    "customer": "Test",
+    "amount": 2300,
+    "status": "Paid",
     "dueDate": "2024-05-10",
     "reminder": true
   }

@@ -52,4 +52,16 @@ export const useInvoiceStore = create((set) => ({
       reminder: false,
     }
   }),
+
+
+
+  // Update invoice status
+  updateInvoiceStatus: (id, status) =>
+  set((state) => ({
+    invoices: state.invoices.map((inv) =>
+      inv.id === id ? { ...inv, status } : inv
+    ),
+  })),
 }));
+
+
