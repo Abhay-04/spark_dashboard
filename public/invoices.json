@@ -1,0 +1,56 @@
+[
+  {
+    "id": "inv-001",
+    "invoiceNumber": "INV-001",
+    "customer": "Client A",
+    "amount": 1200,
+    "status": "Paid",
+    "dueDate": "2024-04-01",
+    "reminder": false
+  },
+  {
+    "id": "inv-002",
+    "invoiceNumber": "INV-002",
+    "customer": "Client B",
+    "amount": 2300,
+    "status": "Unpaid",
+    "dueDate": "2024-05-10",
+    "reminder": true
+  },
+  {
+    "id": "inv-002",
+    "invoiceNumber": "INV-002",
+    "customer": "Client B",
+    "amount": 2300,
+    "status": "Unpaid",
+    "dueDate": "2024-05-10",
+    "reminder": true
+  },
+  {
+    "id": "inv-003",
+    "invoiceNumber": "INV-003",
+    "customer": "Client 3",
+    "amount": 2300,
+    "status": "Unpaid",
+    "dueDate": "2024-05-10",
+    "reminder": true
+  },
+  {
+    "id": "inv-004",
+    "invoiceNumber": "INV-004",
+    "customer": "Client 4",
+    "amount": 2300,
+    "status": "Unpaid",
+    "dueDate": "2024-05-10",
+    "reminder": true
+  },
+  {
+    "id": "inv-005",
+    "invoiceNumber": "INV-005",
+    "customer": "Client 5",
+    "amount": 2300,
+    "status": "Unpaid",
+    "dueDate": "2024-05-10",
+    "reminder": true
+  }
+]

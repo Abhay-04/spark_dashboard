@@ -1,10 +1,10 @@
 import { Button } from "./components/ui/button";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
     <>
-      <h1 className="bg-amber-600 text-3xl text-black">Hello world</h1>
-      <Button>Click me</Button>
+      <Dashboard />
 
     </>
   );
