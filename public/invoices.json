@@ -68,5 +68,14 @@
     "status": "Paid",
     "dueDate": "2024-05-10",
     "reminder": true
+  } , 
+   {
+    "id": "inv-006",
+    "invoiceNumber": "INV-005",
+    "customer": "Test",
+    "amount": 2300,
+    "status": "Paid",
+    "dueDate": "2024-05-10",
+    "reminder": true
   }
 ]

@@ -62,6 +62,12 @@ export const useInvoiceStore = create((set) => ({
       inv.id === id ? { ...inv, status } : inv
     ),
   })),
+
+
+  
+
+
+  
 }));
 
 
