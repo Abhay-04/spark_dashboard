@@ -1,6 +1,6 @@
 // src/components/Header.jsx
 import { ChevronLeft } from "lucide-react";
-import Avatar from "../../public/Avatar.png";
+import Avatar from "../../src/assets/Avatar.png";
 
 export default function Header() {
   return (
