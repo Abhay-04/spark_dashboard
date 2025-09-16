@@ -88,7 +88,7 @@ const NewInvoiceForm = () => {
     <>
       <div
         onClick={() => setOpen(true)}
-        className="w-full lg:w-full  max-w-xxl mx-auto mt-8 mb-6 bg-[#F2F2F2] rounded-3xl shadow-lg flex flex-col items-center px-6 py-10 hover:cursor-pointer"
+        className="w-full lg:w-full  max-w-xxl mx-auto mt-8 mb-6 bg-[#F2F2F2] rounded-3xl shadow-lg flex flex-col items-center px-6 py-4 hover:cursor-pointer"
       >
         <button
           className="flex items-center justify-center w-16 h-16 rounded-full border-4 border-purple-200 bg-white mb-4 shadow-sm "
@@ -106,7 +106,7 @@ const NewInvoiceForm = () => {
           Create New Invoice
         </div>
 
-        <div className="text-[#999999] text-xs  text-center mb-4">
+        <div className="text-[#999999] text-xs  text-center ">
           Start by creating and sending new invoice
         </div>
 
