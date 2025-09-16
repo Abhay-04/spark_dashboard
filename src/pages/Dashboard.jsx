@@ -1,6 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { selectTotals } from "../store/invoiceSlice";
+
 import TimeFilter from "../components/TimeFilter";
 import InvoiceList from "../components/InvoicesList";
 import NewInvoiceForm from "@/components/NewInvoiceForm";
@@ -12,7 +11,7 @@ import Footer from "@/components/Footer";
 
 export default function Dashboard() {
   return (
-    <div className="p-4 container mx-auto max-w-screen-xl">
+    <div className="p-3 container mx-auto max-w-screen-xl ">
       <Header />
       <NewInvoiceForm />
       <TimeFilter />

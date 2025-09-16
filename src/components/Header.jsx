@@ -4,7 +4,7 @@ import Avatar from "../../public/Avatar.png";
 
 export default function Header() {
   return (
-    <header className="flex items-center justify-between w-full px-4 py-2 mb-2 max-w-screen-xl mx-auto">
+    <header className="flex items-center justify-between w-full  mb-2 max-w-screen-xl mx-auto  ">
       <div className="flex items-center cursor-pointer space-x-1 min-w-[70px]">
         <ChevronLeft className="text-gray-800 text-xs sm:text-sm" />
         <span className="font-medium text-gray-800 text-xs sm:text-sm">Back</span>
