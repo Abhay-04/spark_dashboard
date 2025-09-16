@@ -25,7 +25,7 @@ export default function InvoiceRow({ invoice, onStatusChange }) {
       <div>
         <p className="font-medium">{invoice.customer}</p>
         <p className="text-sm text-gray-500">
-          ₹{invoice.amount.toLocaleString()}, Due:{" "}
+          ₹{invoice.amount.toLocaleString()}, Due:
           {new Date(invoice.dueDate).toLocaleDateString()}
         </p>
       </div>

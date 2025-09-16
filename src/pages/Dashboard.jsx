@@ -5,28 +5,18 @@ import TimeFilter from '../components/TimeFilter'
 import InvoiceList from '../components/InvoicesList'
 import NewInvoiceForm from '@/components/NewInvoiceForm'
 import IncomeTrendChart from '@/components/IncomeTrendChart'
+import PaymentDataCard from '@/components/PaymentDataCard'
 
 export default function Dashboard() {
-  const { totalEarnings, paymentAwaited, paymentOverdue } =
-    useSelector(selectTotals)
+
 
   return (
     <div className="p-4">
       <h1 className="text-xl font-bold mb-4">Dashboard</h1>
       <NewInvoiceForm />
       <TimeFilter />
+      <PaymentDataCard />
       <IncomeTrendChart />
-      <div className="grid grid-cols-3 gap-4 mt-4">
-        <div className="p-4 border rounded">
-          Total Earnings: {totalEarnings}
-        </div>
-        <div className="p-4 border rounded">
-          Payment Awaited: {paymentAwaited}
-        </div>
-        <div className="p-4 border rounded">
-          Payment Overdue: {paymentOverdue}
-        </div>
-      </div>
       <InvoiceList />
     </div>
   )

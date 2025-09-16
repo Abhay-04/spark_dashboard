@@ -74,7 +74,7 @@ const IncomeTrendChart = () => {
   }
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-sm border">
+    <div className="bg-white p-6 my-6 rounded-lg shadow-sm border">
       <div className="mb-4">
         <h3 className="text-lg font-semibold text-gray-900">Income Trend</h3>
         <p className="text-sm text-gray-600 mt-1">
