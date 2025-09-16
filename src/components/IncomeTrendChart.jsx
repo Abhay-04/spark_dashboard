@@ -74,7 +74,7 @@ const IncomeTrendChart = () => {
   }
 
   return (
-    <div className="bg-white p-6 my-6 rounded-lg shadow-sm border">
+    <div className="bg-white px-2 py-6 my-6 rounded-lg shadow-sm border">
       <div className="mb-4">
         <h3 className="text-lg font-semibold text-gray-900">Income Trend</h3>
         <p className="text-sm text-gray-600 mt-1">
@@ -88,9 +88,9 @@ const IncomeTrendChart = () => {
             data={data}
             margin={{
               top: 20,
-              right: 60,
+              right: 10,
               bottom: 20,
-              left: 20,
+              left: 10,
             }}
           >
             <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />

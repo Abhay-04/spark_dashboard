@@ -13,9 +13,9 @@
     "id": "inv-002",
     "invoiceNumber": "INV-002",
     "customer": "Client B",
-    "amount": 2300,
+    "amount": 3300,
     "status": "Overdue",
-    "dueDate": "2024-05-10",
+    "dueDate": "2025-04-10",
     "reminder": true
   },
   {
@@ -57,7 +57,7 @@
   {
     "id": "inv-007",
     "invoiceNumber": "INV-007",
-    "customer": "Test",
+    "customer": "Client G",
     "amount": 1400,
     "status": "Paid",
     "dueDate": "2025-05-10",
@@ -66,7 +66,7 @@
   {
     "id": "inv-008",
     "invoiceNumber": "INV-008",
-    "customer": "Test",
+    "customer": "Client H",
     "amount": 2800,
     "status": "Paid",
     "dueDate": "2025-06-10",
@@ -75,7 +75,7 @@
   {
     "id": "inv-009",
     "invoiceNumber": "INV-009",
-    "customer": "Test",
+    "customer": "Client I",
     "amount": 2000,
     "status": "Paid",
     "dueDate": "2025-07-10",
@@ -84,7 +84,7 @@
   {
     "id": "inv-010",
     "invoiceNumber": "INV-010",
-    "customer": "Test",
+    "customer": "Client J",
     "amount": 2300,
     "status": "Paid",
     "dueDate": "2025-08-10",

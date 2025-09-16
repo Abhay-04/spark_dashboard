@@ -55,7 +55,7 @@ export default function InvoiceRow({ invoice, onStatusChange }) {
     </DropdownMenuContent>
   </DropdownMenu>
 
-  {["Overdue", "Awaited", "Unpaid"].includes(invoice.status) && (
+  {["Overdue", "Awaited", "Unpaid" , "Partially Paid"].includes(invoice.status) && (
     <Bell className="h-4 w-4 text-gray-400 ml-1" />
   )}
 </div>
