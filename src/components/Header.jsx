@@ -4,13 +4,13 @@ import Avatar from "../../public/Avatar.png";
 
 export default function Header() {
   return (
-    <header className="flex items-center justify-center w-full  mb-2 max-w-screen-xl mx-auto  ">
-      <div className="flex items-center cursor-pointer space-x-1 min-w-[70px]">
+    <header className="flex items-center justify-center w-full  mb-2  mx-auto  ">
+      <div className="flex items-center cursor-pointer ">
         <ChevronLeft className="text-gray-800 text-xs sm:text-sm" />
-        <span className="font-medium text-gray-800 text-xs sm:text-sm">Back</span>
+        <span className="font-medium text-[#212529] text-sm sm:text-lg">Back</span>
       </div>
 
-      <h1 className="font-bold text-gray-900 text-base sm:text-lg flex-grow text-center truncate px-4">
+      <h1 className="font-semibold text-black text-base sm:text-lg flex-grow text-center truncate px-4">
         Dashboard
       </h1>
 
