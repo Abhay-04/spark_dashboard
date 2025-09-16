@@ -25,7 +25,7 @@ export default function TimeFilter() {
   }
 
   return (
-    <div className="rounded-2xl bg-white/80 border border-gray-200 shadow-sm px-4 py-4 flex flex-col w-[340px] max-w-xxl mt-4">
+    <div className="rounded-2xl bg-white/80 border border-gray-200 shadow-sm px-4 py-4 flex flex-col w-[340px] sm:w-full max-w-xxl mt-4">
       <div className="flex justify-between pb-2 px-1">
         <span className="font-medium text-gray-800 text-[15px]">Time Period</span>
         <span className="text-gray-400 text-xs">{formatRange(filterTime === 'Custom' ? customRange : undefined)}</span>

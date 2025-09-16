@@ -1,23 +1,26 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
-import { selectTotals } from '../store/invoiceSlice'
-import TimeFilter from '../components/TimeFilter'
-import InvoiceList from '../components/InvoicesList'
-import NewInvoiceForm from '@/components/NewInvoiceForm'
-import IncomeTrendChart from '@/components/IncomeTrendChart'
-import PaymentDataCard from '@/components/PaymentDataCard'
+import React from "react";
+import { useSelector } from "react-redux";
+import { selectTotals } from "../store/invoiceSlice";
+import TimeFilter from "../components/TimeFilter";
+import InvoiceList from "../components/InvoicesList";
+import NewInvoiceForm from "@/components/NewInvoiceForm";
+import IncomeTrendChart from "@/components/IncomeTrendChart";
+import PaymentDataCard from "@/components/PaymentDataCard";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+
 
 export default function Dashboard() {
-
-
   return (
-    <div className="p-4">
-      <h1 className="text-xl font-bold mb-4">Dashboard</h1>
+    <div className="p-4 container mx-auto max-w-screen-xl">
+      <Header />
       <NewInvoiceForm />
       <TimeFilter />
       <PaymentDataCard />
       <IncomeTrendChart />
       <InvoiceList />
+      <Footer />
+     
     </div>
-  )
+  );
 }

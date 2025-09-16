@@ -1,22 +1,25 @@
 // src/components/Header.jsx
 import { ChevronLeft } from "lucide-react";
 import Avatar from "../../public/Avatar.png";
+
 export default function Header() {
   return (
-    <header className="flex items-center justify-between py-3 px-2 bg-purple-100 border-rounded-xl mb-2 ">
-      <div className="flex items-center space-x-1 cursor-pointer">
-        <ChevronLeft className="text-gray-800 text-lg" />
-
-        <span className="text-lg font-medium text-gray-800">Back</span>
+    <header className="flex items-center justify-between w-full px-4 py-2 mb-2 max-w-screen-xl mx-auto">
+      <div className="flex items-center cursor-pointer space-x-1 min-w-[70px]">
+        <ChevronLeft className="text-gray-800 text-xs sm:text-sm" />
+        <span className="font-medium text-gray-800 text-xs sm:text-sm">Back</span>
       </div>
 
-      <h1 className="text-lg font-bold text-gray-900">Dashboard</h1>
+      <h1 className="font-bold text-gray-900 text-base sm:text-lg flex-grow text-center truncate px-4">
+        Dashboard
+      </h1>
 
       <img
         src={Avatar}
         alt="User Avatar"
-        className="w-10 h-10 rounded-full object-cover"
+        className="w-7 h-7 sm:w-8 sm:h-8 rounded-full object-cover flex-shrink-0"
       />
     </header>
   );
 }
+
