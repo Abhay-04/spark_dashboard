@@ -139,7 +139,7 @@ const NewInvoiceForm = () => {
                   htmlFor="invoiceNumber"
                   className="text-right text-purple-700 font-medium"
                 >
-                  Invoice #
+                  Invoice
                 </Label>
                 <Input
                   id="invoiceNumber"
@@ -249,7 +249,7 @@ const NewInvoiceForm = () => {
                     htmlFor="reminder"
                     className="text-sm font-normal text-purple-600 hover:cursor-pointer"
                   >
-                    Enable reminder notifications
+                    Enable reminders
                   </Label>
                 </div>
               </div>

@@ -38,7 +38,7 @@ export default function TimeFilter() {
           className={`text-sm text-[#999999] px-4 py-1 rounded-full border transition
             ${
               filterTime === "1Month"
-                ? "bg-gradient-to-r from-purple-500 to-pink-400 text-white shadow"
+                ? "border-[#F3E8FF] text-purple-700 bg-[#F3E8FF] shadow"
                 : "border-gray-200 text-gray-600 bg-white hover:bg-purple-100"
             }
           `}
@@ -50,7 +50,7 @@ export default function TimeFilter() {
           className={`text-sm text-[#999999] px-4 py-1 rounded-full border transition
             ${
               filterTime === "3Months"
-                ? "bg-gradient-to-r from-purple-500 to-pink-400 text-white shadow"
+                ? "border-[#F3E8FF] text-purple-700 bg-[#F3E8FF] shadow"
                 : "border-gray-200 text-gray-600 bg-white hover:bg-purple-100"
             }
           `}
@@ -62,7 +62,7 @@ export default function TimeFilter() {
           className={`text-sm text-[#999999] px-4 py-1 rounded-full border flex items-center gap-1 transition
             ${
               filterTime === "1Year"
-                ? "bg-gradient-to-r from-purple-500 to-pink-400 text-white shadow"
+                ? "border-[#F3E8FF] text-purple-700 bg-[#F3E8FF] shadow"
                 : "border-gray-200 text-gray-700 bg-white hover:bg-purple-100"
             }
           `}
@@ -77,7 +77,7 @@ export default function TimeFilter() {
               className={`text-sm px-4 py-1 flex items-center border rounded-full gap-1 transition
         ${
           filterTime === "Custom"
-            ? "border-purple-400 text-purple-700 bg-purple-50"
+            ? "border-[#F3E8FF] text-purple-700 bg-[#F3E8FF] shadow"
             : "border-gray-200 text-gray-700 bg-white hover:bg-purple-100"
         }
         text-[#999999]
