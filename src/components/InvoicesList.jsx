@@ -1,20 +1,32 @@
-import React from "react";
-import { useInvoiceStore } from "../store/useInvoiceStore";
-import InvoiceRow from "./InvoiceRow";
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import {
+  loadInvoices,
+  selectFilteredInvoices,
+} from '../store/invoiceSlice'
 
 export default function InvoiceList() {
-  const { invoices, updateInvoiceStatus } = useInvoiceStore();
+  const dispatch = useDispatch()
+  const invoices = useSelector(selectFilteredInvoices)
+
+  useEffect(() => {
+    dispatch(loadInvoices())
+  }, [dispatch])
 
   return (
-    <div className="p-4">
-      <h2 className="text-lg font-semibold mb-4">Your Invoices</h2>
+    <div>
+      <h2 className="text-lg font-semibold mb-4">Invoices</h2>
+       {invoices.length === 0 && <p>No invoices found.</p>}
       {invoices.map((inv) => (
-        <InvoiceRow
-          key={inv.id}
-          invoice={inv}
-          onStatusChange={updateInvoiceStatus}
-        />
+        <div key={inv.id} className="p-2 border mb-2 rounded">
+          <p>
+            <strong>{inv.invoiceNumber}</strong> — {inv.customer}
+          </p>
+          <p>Status: {inv.status}</p>
+          <p>Amount: {inv.amount}</p>
+          <p>Due Date: {inv.dueDate}</p>
+        </div>
       ))}
     </div>
-  );
+  )
 }
