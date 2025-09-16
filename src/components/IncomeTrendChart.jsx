@@ -74,10 +74,10 @@ const IncomeTrendChart = () => {
   }
 
   return (
-    <div className="bg-white px-2 py-6 my-6 rounded-lg shadow-sm border">
-      <div className="mb-4">
-        <h3 className="text-lg font-semibold text-gray-900">Income Trend</h3>
-        <p className="text-sm text-gray-600 mt-1">
+    <div className="bg-white py-4 px-2  my-6 rounded-lg shadow-sm border border-[#F2F2F2] ">
+      <div>
+        <h3 className="text-sm font-semibold text-[#6B7280]">Income Trend</h3>
+        <p className="text-sm text-[#6B7280] mt-1">
           Your monthly income and growth for the last 6 months.
         </p>
       </div>
@@ -119,7 +119,7 @@ const IncomeTrendChart = () => {
             <Bar 
               yAxisId="left"
               dataKey="income" 
-              fill="#8B5CF6" 
+              fill="#A743EF" 
               radius={[4, 4, 0, 0]}
               barSize={40}
             />
@@ -128,7 +128,7 @@ const IncomeTrendChart = () => {
               yAxisId="right"
               type="monotone" 
               dataKey="momGrowth" 
-              stroke="#8B5A2B" 
+              stroke="#872C2B" 
               strokeWidth={3}
               dot={<CustomDot />}
               connectNulls={false}
