@@ -1,13 +1,13 @@
 import logo from "../assets/logo.png";
 
 const Footer = () => (
-  <footer className="w-full mt-8 flex flex-col items-center">
+  <footer className="w-full mt-20 mb-8 flex flex-col items-center">
     {/* Separator Line */}
     <hr className="w-full border-t border-gray-200 mb-4" />
 
     {/* Brand name with colored 'Spark' */}
     <div className="flex flex-col items-center">
-      <img src={logo} alt="Sparkonomy Logo" className="w-16 h-3.5 mb-1" />
+      <img src={logo} alt="Sparkonomy Logo" className="w-[67px] h-3.5 mb-1" />
 
       <span className="text-[10px] text-[#999999] mt-1">
         sparking the creator economy
