@@ -40,45 +40,45 @@
     "id": "inv-005",
     "invoiceNumber": "INV-005",
     "customer": "Client 4",
-    "amount": 2300,
+    "amount": 3300,
     "status": "Disputed",
-    "dueDate": "2024-05-10",
+    "dueDate": "2025-03-10",
     "reminder": true
   },
   {
     "id": "inv-006",
     "invoiceNumber": "INV-006",
     "customer": "Client 5",
-    "amount": 2300,
+    "amount": 3000,
     "status": "Unpaid",
-    "dueDate": "2024-05-10",
+    "dueDate": "2025-04-10",
     "reminder": true
   },
   {
     "id": "inv-007",
     "invoiceNumber": "INV-007",
     "customer": "Test",
-    "amount": 2300,
+    "amount": 1400,
     "status": "Paid",
-    "dueDate": "2024-05-10",
+    "dueDate": "2025-05-10",
     "reminder": true
   },
   {
     "id": "inv-008",
     "invoiceNumber": "INV-008",
     "customer": "Test",
-    "amount": 2300,
+    "amount": 2800,
     "status": "Paid",
-    "dueDate": "2024-05-10",
+    "dueDate": "2025-06-10",
     "reminder": true
   },
   {
     "id": "inv-009",
     "invoiceNumber": "INV-009",
     "customer": "Test",
-    "amount": 2300,
+    "amount": 2000,
     "status": "Paid",
-    "dueDate": "2025-05-10",
+    "dueDate": "2025-07-10",
     "reminder": true
   },
   {

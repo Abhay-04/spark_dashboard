@@ -4,6 +4,7 @@ import { selectTotals } from '../store/invoiceSlice'
 import TimeFilter from '../components/TimeFilter'
 import InvoiceList from '../components/InvoicesList'
 import NewInvoiceForm from '@/components/NewInvoiceForm'
+import IncomeTrendChart from '@/components/IncomeTrendChart'
 
 export default function Dashboard() {
   const { totalEarnings, paymentAwaited, paymentOverdue } =
@@ -14,6 +15,7 @@ export default function Dashboard() {
       <h1 className="text-xl font-bold mb-4">Dashboard</h1>
       <NewInvoiceForm />
       <TimeFilter />
+      <IncomeTrendChart />
       <div className="grid grid-cols-3 gap-4 mt-4">
         <div className="p-4 border rounded">
           Total Earnings: {totalEarnings}
