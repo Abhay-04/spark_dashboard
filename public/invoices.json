@@ -89,5 +89,23 @@
     "status": "Paid",
     "dueDate": "2025-08-10",
     "reminder": true
+  } , 
+   {
+    "id": "inv-011",
+    "invoiceNumber": "INV-011",
+    "customer": "Client K",
+    "amount": 1500,
+    "status": "Paid",
+    "dueDate": "2025-04-10",
+    "reminder": true
+  } , 
+  {
+    "id": "inv-012",
+    "invoiceNumber": "INV-012",
+    "customer": "Client L",
+    "amount": 1800,
+    "status": "Paid",
+    "dueDate": "2025-09-10",
+    "reminder": true
   }
 ]
