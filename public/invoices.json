@@ -20,7 +20,7 @@
   },
   {
     "id": "inv-003",
-    "invoiceNumber": "INV-002",
+    "invoiceNumber": "INV-003",
     "customer": "Client B",
     "amount": 2300,
     "status": "Awaited",
@@ -29,7 +29,7 @@
   },
   {
     "id": "inv-004",
-    "invoiceNumber": "INV-003",
+    "invoiceNumber": "INV-004",
     "customer": "Client 3",
     "amount": 2300,
     "status": "Partially Paid",
@@ -38,7 +38,7 @@
   },
   {
     "id": "inv-005",
-    "invoiceNumber": "INV-004",
+    "invoiceNumber": "INV-005",
     "customer": "Client 4",
     "amount": 2300,
     "status": "Disputed",
@@ -47,7 +47,7 @@
   },
   {
     "id": "inv-006",
-    "invoiceNumber": "INV-005",
+    "invoiceNumber": "INV-006",
     "customer": "Client 5",
     "amount": 2300,
     "status": "Unpaid",
@@ -56,7 +56,7 @@
   },
   {
     "id": "inv-007",
-    "invoiceNumber": "INV-005",
+    "invoiceNumber": "INV-007",
     "customer": "Test",
     "amount": 2300,
     "status": "Paid",
@@ -65,7 +65,7 @@
   },
   {
     "id": "inv-008",
-    "invoiceNumber": "INV-005",
+    "invoiceNumber": "INV-008",
     "customer": "Test",
     "amount": 2300,
     "status": "Paid",
@@ -74,7 +74,7 @@
   },
   {
     "id": "inv-009",
-    "invoiceNumber": "INV-005",
+    "invoiceNumber": "INV-009",
     "customer": "Test",
     "amount": 2300,
     "status": "Paid",
@@ -83,7 +83,7 @@
   },
   {
     "id": "inv-010",
-    "invoiceNumber": "INV-005",
+    "invoiceNumber": "INV-010",
     "customer": "Test",
     "amount": 2300,
     "status": "Paid",
