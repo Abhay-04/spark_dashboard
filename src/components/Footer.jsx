@@ -1,3 +1,7 @@
+import { Import } from "lucide-react";
+
+import Footer_Logo from "../../public/Footer_Logo.png"
+
 const Footer = () => (
   <footer className="w-full mt-8 flex flex-col items-center">
     {/* Separator Line */}
@@ -5,11 +9,12 @@ const Footer = () => (
     
     {/* Brand name with colored 'Spark' */}
     <div className="flex flex-col items-center">
-      <span className="text-lg font-medium">
+      {/* <span className="text-lg font-medium">
         <span className="font-semibold text-purple-500">Spark</span>
         <span className="text-gray-500">onomy</span>
-      </span>
-      <span className="text-sm text-gray-400 mt-1">
+      </span> */}
+      <image src={Footer_Logo} alt="Sparkonomy Logo" className="w-16 h-3.5 mb-1" />
+      <span className="text-[10px] text-[#999999] mt-1">
         sparking the creator economy
       </span>
     </div>
