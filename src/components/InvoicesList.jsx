@@ -24,8 +24,8 @@ export default function InvoiceList() {
   return (
     <div className="w-full max-w-xxl mx-auto mt-6">
       <div className="flex items-center justify-between mb-3 px-1">
-        <span className="text-sm text-gray-500 font-semibold">Your Invoices</span>
-        <ChevronDown className="h-4 w-4 text-gray-400" />
+        <span className="text-base text-[#999999] font-semibold">Your Invoices</span>
+        <ChevronDown className="h-4 w-4 text-[#1F1F1F]" />
       </div>
       <div>
         {invoices.length === 0 && (

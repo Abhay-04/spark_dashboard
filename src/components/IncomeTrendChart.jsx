@@ -69,7 +69,7 @@ const IncomeTrendChart = () => {
 
   // Custom dot component for the line
   const CustomDot = (props) => {
-    const { cx, cy, fill } = props
+    const { cx, cy } = props
     return <circle cx={cx} cy={cy} r={3} fill="#8B5A2B" stroke="#8B5A2B" strokeWidth={2} />
   }
 
