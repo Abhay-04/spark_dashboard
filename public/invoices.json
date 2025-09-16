@@ -21,7 +21,7 @@
   {
     "id": "inv-003",
     "invoiceNumber": "INV-003",
-    "customer": "Client B",
+    "customer": "Client C",
     "amount": 2300,
     "status": "Awaited",
     "dueDate": "2024-05-10",
@@ -30,7 +30,7 @@
   {
     "id": "inv-004",
     "invoiceNumber": "INV-004",
-    "customer": "Client 3",
+    "customer": "Client D",
     "amount": 2300,
     "status": "Partially Paid",
     "dueDate": "2024-05-10",
@@ -39,7 +39,7 @@
   {
     "id": "inv-005",
     "invoiceNumber": "INV-005",
-    "customer": "Client 4",
+    "customer": "Client E",
     "amount": 3300,
     "status": "Disputed",
     "dueDate": "2025-03-10",
@@ -48,7 +48,7 @@
   {
     "id": "inv-006",
     "invoiceNumber": "INV-006",
-    "customer": "Client 5",
+    "customer": "Client F",
     "amount": 3000,
     "status": "Unpaid",
     "dueDate": "2025-04-10",

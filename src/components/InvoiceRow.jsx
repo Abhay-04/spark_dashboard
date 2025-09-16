@@ -20,48 +20,46 @@ const statusColors = {
 
 export default function InvoiceRow({ invoice, onStatusChange }) {
   return (
-    <div className="flex items-center justify-between rounded-xl border p-4 mb-3 bg-white shadow-sm">
-      {/* Left Side */}
+    <div className="flex items-center justify-between rounded-2xl border border-gray-200 bg-white/90 p-4 mb-2 shadow-sm min-h-[82px]">
+      {/* Left */}
       <div>
-        <p className="font-medium">{invoice.customer}</p>
+        <p className="font-medium">{invoice.customer || "Income Trend"}</p>
         <p className="text-sm text-gray-500">
-          ₹{invoice.amount.toLocaleString()}, Due:
-          {new Date(invoice.dueDate).toLocaleDateString()}
+          ₹{invoice.amount?.toLocaleString("en-IN") || "1,25,000"}, Due:{" "}
+          {invoice.dueDate
+            ? new Date(invoice.dueDate).toLocaleDateString("en-CA")
+            : "2024-06-15"}
         </p>
       </div>
-
-      {/* Right Side */}
+      {/* Right */}
       <div className="flex items-center gap-2">
-        {invoice.isAdmin ? (
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button className="bg-purple-600 hover:bg-purple-700 text-white text-sm">
-                Update Status
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              {Object.keys(statusColors).map((s) => (
-                <DropdownMenuItem
-                  key={s}
-                  onClick={() => onStatusChange(invoice.id, s)}
-                >
-                  {s}
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
-        ) : (
-          <Badge
-            className={`${statusColors[invoice.status]} px-3 py-1 rounded-full`}
-          >
-            {invoice.status}
-          </Badge>
-        )}
+  <DropdownMenu>
+    <DropdownMenuTrigger asChild>
+      <Badge
+        className={`cursor-pointer px-4 py-1 text-sm font-medium rounded-full ${
+          statusColors[invoice.status]
+        }`}
+      >
+        {invoice.status}
+      </Badge>
+    </DropdownMenuTrigger>
+    <DropdownMenuContent>
+      {Object.keys(statusColors).map((s) => (
+        <DropdownMenuItem
+          key={s}
+          onClick={() => onStatusChange(invoice.id, s)}
+        >
+          {s}
+        </DropdownMenuItem>
+      ))}
+    </DropdownMenuContent>
+  </DropdownMenu>
 
-        {invoice.reminder && (
-          <Bell className="h-4 w-4 text-gray-400 cursor-pointer" />
-        )}
-      </div>
+  {["Overdue", "Awaited", "Unpaid"].includes(invoice.status) && (
+    <Bell className="h-4 w-4 text-gray-400 ml-1" />
+  )}
+</div>
+
     </div>
   );
 }
