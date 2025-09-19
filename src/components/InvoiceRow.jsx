@@ -55,13 +55,13 @@ export default function InvoiceRow({ invoice, onStatusChange }) {
         {hasStatus && (
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-             { invoice.status !== null && <Badge
+              <Badge
                 className={`cursor-pointer px-4 py-1 text-xs font-bold rounded-full ${
                   statusColors[invoice.status] || "bg-gray-300 text-gray-800"
                 }`}
               >
                 {invoice.status}
-              </Badge>}
+              </Badge>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               {Object.keys(statusColors).map((s) => (
