@@ -23,7 +23,7 @@ export const loadInvoices = createAsyncThunk(
       dueDate: item.due_date, // rename
       status: item.status
         ? item.status.charAt(0).toUpperCase() + item.status.slice(1)
-        : null, // default
+        : "null", // default
       reminder: false, // your extra field
     }));
 

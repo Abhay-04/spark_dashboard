@@ -9,7 +9,6 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -27,20 +26,22 @@ const NewInvoiceForm = () => {
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
   const form = useSelector((state) => state.invoices.form);
-  const invoices = useSelector((state) => state.invoices.invoices); // Generate next invoice number
+  const invoices = useSelector((state) => state.invoices.invoices);
 
+  // --- Generate next invoice number ---
   const generateInvoiceNumber = () => {
     const existingNumbers = invoices
-      .map((inv) => inv.invoiceNumber)
-      .filter((num) => num.startsWith("INV-"))
+      .map((inv) => inv.invoiceNumber || inv.id) // fallback to id if missing
+      .filter((num) => typeof num === "string" && num.startsWith("INV-"))
       .map((num) => parseInt(num.replace("INV-", ""), 10))
       .filter((num) => !isNaN(num));
-    const maxNumber =
-      existingNumbers.length > 0 ? Math.max(...existingNumbers) : 8;
+
+    const maxNumber = existingNumbers.length > 0 ? Math.max(...existingNumbers) : 8;
     const nextNumber = maxNumber + 1;
     return `INV-${nextNumber.toString().padStart(3, "0")}`;
-  }; // Set invoice number when dialog opens
+  };
 
+  // --- Set invoice number when dialog opens ---
   useEffect(() => {
     if (open && !form.invoiceNumber) {
       const newInvoiceNumber = generateInvoiceNumber();
@@ -54,26 +55,24 @@ const NewInvoiceForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (
-      !form.invoiceNumber ||
-      !form.customer ||
-      !form.amount ||
-      !form.dueDate
-    ) {
+    if (!form.invoiceNumber || !form.customer || !form.amount || !form.dueDate) {
       alert("Please fill in all required fields");
       return;
     }
+
+    // Map frontend fields to API fields
     dispatch(
       addInvoice({
-        invoiceNumber: form.invoiceNumber,
-        customer: form.customer,
-        amount: parseFloat(form.amount),
-        dueDate: form.dueDate,
+        invoiceNumber: form.invoiceNumber, // local only
+        client_name: form.customer,
+        due_amount: parseFloat(form.amount),
+        due_date: form.dueDate,
         status: form.status,
         reminder: form.reminder,
         createdAt: new Date().toISOString(),
       })
     );
+
     dispatch(resetForm());
     setOpen(false);
   };
@@ -82,13 +81,12 @@ const NewInvoiceForm = () => {
     dispatch(resetForm());
     setOpen(false);
   };
-  // --- CARD UI -------
 
   return (
     <>
       <div
         onClick={() => setOpen(true)}
-        className="w-full lg:w-full  max-w-xxl mx-auto mt-8 mb-6 bg-[#F2F2F2] rounded-3xl shadow-lg flex flex-col items-center px-6 py-4 hover:cursor-pointer"
+        className="w-full lg:w-full max-w-xxl mx-auto mt-8 mb-6 bg-[#F2F2F2] rounded-3xl shadow-lg flex flex-col items-center px-6 py-4 hover:cursor-pointer"
       >
         <button
           className="flex items-center justify-center w-16 h-16 rounded-full border-4 border-purple-200 bg-white mb-4 shadow-sm "
@@ -106,75 +104,63 @@ const NewInvoiceForm = () => {
           Create New Invoice
         </div>
 
-        <div className="text-[#999999] text-xs  text-center ">
+        <div className="text-[#999999] text-xs text-center ">
           Start by creating and sending new invoice
         </div>
-
-        
-
       </div>
-       <div className=" text-center">
-        <button className="text-xs text-[#8134AF]  over:underline mx-auto">
+
+      <div className=" text-center">
+        <button className="text-xs text-[#8134AF] hover:underline mx-auto">
           Or Upload an existing invoice and set payment reminder
         </button>
-       </div>
-       
+      </div>
 
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="sm:max-w-[425px] bg-white rounded-md shadow-lg border border-purple-300">
           <DialogHeader>
-            <DialogTitle className="text-purple-700 font-semibold ">
+            <DialogTitle className="text-purple-700 font-semibold">
               Create New Invoice
             </DialogTitle>
             <DialogDescription>
-              Fill in the invoice details below. Click save when you&apos;re
-              done.
+              Fill in the invoice details below. Click save when you&apos;re done.
             </DialogDescription>
           </DialogHeader>
 
           <form onSubmit={handleSubmit}>
             <div className="grid gap-4 py-4">
+              {/* Invoice Number */}
               <div className="grid grid-cols-4 items-center gap-4">
-                <Label
-                  htmlFor="invoiceNumber"
-                  className="text-right text-purple-700 font-medium"
-                >
+                <Label htmlFor="invoiceNumber" className="text-right text-purple-700 font-medium">
                   Invoice
                 </Label>
                 <Input
                   id="invoiceNumber"
                   value={form.invoiceNumber}
                   placeholder="INV-010"
-                  className="col-span-3 border border-purple-400 focus:border-purple-600 focus:ring focus:ring-purple-300 rounded-md "
+                  className="col-span-3 border border-purple-400 focus:border-purple-600 focus:ring focus:ring-purple-300 rounded-md"
                   disabled
                   readOnly
                 />
               </div>
 
+              {/* Customer */}
               <div className="grid grid-cols-4 items-center gap-4">
-                <Label
-                  htmlFor="customer"
-                  className="text-right text-purple-700 font-medium"
-                >
+                <Label htmlFor="customer" className="text-right text-purple-700 font-medium">
                   Customer
                 </Label>
                 <Input
                   id="customer"
                   value={form.customer}
-                  onChange={(e) =>
-                    handleInputChange("customer", e.target.value)
-                  }
+                  onChange={(e) => handleInputChange("customer", e.target.value)}
                   placeholder="Customer name"
                   className="col-span-3 border border-purple-400 focus:border-purple-600 focus:ring focus:ring-purple-300 rounded-md hover:cursor-pointer"
                   required
                 />
               </div>
 
+              {/* Amount */}
               <div className="grid grid-cols-4 items-center gap-4">
-                <Label
-                  htmlFor="amount"
-                  className="text-right text-purple-700 font-medium "
-                >
+                <Label htmlFor="amount" className="text-right text-purple-700 font-medium">
                   Amount
                 </Label>
                 <Input
@@ -189,11 +175,9 @@ const NewInvoiceForm = () => {
                 />
               </div>
 
+              {/* Due Date */}
               <div className="grid grid-cols-4 items-center gap-4">
-                <Label
-                  htmlFor="dueDate"
-                  className="text-right text-purple-700 font-medium"
-                >
+                <Label htmlFor="dueDate" className="text-right text-purple-700 font-medium">
                   Due Date
                 </Label>
                 <Input
@@ -206,11 +190,9 @@ const NewInvoiceForm = () => {
                 />
               </div>
 
+              {/* Status */}
               <div className="grid grid-cols-4 items-center gap-4">
-                <Label
-                  htmlFor="status"
-                  className="text-right text-purple-700 font-medium"
-                >
+                <Label htmlFor="status" className="text-right text-purple-700 font-medium">
                   Status
                 </Label>
                 <Select
@@ -225,30 +207,24 @@ const NewInvoiceForm = () => {
                     <SelectItem value="Paid">Paid</SelectItem>
                     <SelectItem value="Awaited">Awaited</SelectItem>
                     <SelectItem value="Overdue">Overdue</SelectItem>
+                    <SelectItem value="Disputed">Disputed</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
 
+              {/* Reminder */}
               <div className="grid grid-cols-4 items-center gap-4">
-                <Label
-                  htmlFor="reminder"
-                  className="text-right text-purple-700 font-medium"
-                >
+                <Label htmlFor="reminder" className="text-right text-purple-700 font-medium">
                   Reminder
                 </Label>
                 <div className="col-span-3 flex items-center space-x-2">
                   <Checkbox
                     id="reminder"
                     checked={form.reminder}
-                    onCheckedChange={(checked) =>
-                      handleInputChange("reminder", checked)
-                    }
+                    onCheckedChange={(checked) => handleInputChange("reminder", checked)}
                     className="border-purple-600 checked:bg-purple-600 hover:cursor-pointer"
                   />
-                  <Label
-                    htmlFor="reminder"
-                    className="text-sm font-normal text-purple-600 hover:cursor-pointer"
-                  >
+                  <Label htmlFor="reminder" className="text-sm font-normal text-purple-600 hover:cursor-pointer">
                     Enable reminders
                   </Label>
                 </div>
