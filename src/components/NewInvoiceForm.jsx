@@ -113,8 +113,7 @@ const NewInvoiceForm = () => {
       dispatch(resetForm());
       setOpen(false);
       
-      // Show success message
-      alert("Invoice created successfully!");
+    
       
     } catch (error) {
       console.error("Error creating invoice:", error);
