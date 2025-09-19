@@ -9,6 +9,7 @@ import {
 import { Calendar } from "@/components/ui/calendar";
 import { CalendarIcon, Crown } from "lucide-react";
 import { Button } from "./ui/button";
+import { format } from "date-fns";
 
 export default function TimeFilter() {
   const dispatch = useDispatch();
@@ -16,14 +17,13 @@ export default function TimeFilter() {
   const customRange = useSelector((state) => state.invoices.customRange);
 
   // Helper for displaying date string
-  const formatRange = (range) => {
-    if (!range?.from || !range?.to) return "dd:mm:yyyy - dd:mm:yyyy";
-    const format = (date) =>
-      `${date.getDate().toString().padStart(2, "0")}:` +
-      `${(date.getMonth() + 1).toString().padStart(2, "0")}:` +
-      `${date.getFullYear()}`;
-    return `${format(range.from)} - ${format(range.to)}`;
-  };
+const formatRange = (range) => {
+  if (!range || !range.from || !range.to) return ''
+  // format both dates as dd/MMM/yyyy (01/Sep/2025)
+  const from = format(range.from, 'dd/MMM/yyyy')
+  const to = format(range.to, 'dd/MMM/yyyy')
+  return `${from} - ${to}`
+}
 
   return (
     <div className="rounded-2xl bg-[#FFFFF] border border-[#F2F2F2] shadow-sm px-4 py-4 flex flex-col  sm:w-full max-w-xxl mt-4">
@@ -85,7 +85,7 @@ export default function TimeFilter() {
               onClick={() => dispatch(setFilterTime("Custom"))}
             >
               <CalendarIcon className="h-4 w-4 text-[#999999]" />
-              Custom
+              {formatRange(filterTime === "Custom" ? customRange : undefined)}
             </button>
           </PopoverTrigger>
           <PopoverContent
